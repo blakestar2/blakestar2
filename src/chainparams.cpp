@@ -128,7 +128,7 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xa4;
+        pchMessageStart[0] = 0xa3;
         pchMessageStart[1] = 0xd1;
         pchMessageStart[2] = 0x1f;
         pchMessageStart[3] = 0xc2;
