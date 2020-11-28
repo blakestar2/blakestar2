@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Blas
+Comment=Blas P2P Cryptocurrency
+Comment[fr]=Blas, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Blas, eşten eşe kriptografik sanal para birimi
+Exec=blas-qt %u
+Terminal=false
+Type=Application
+Icon=blas128
+MimeType=x-scheme-handler/blas;
+Categories=Office;Finance;

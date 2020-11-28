@@ -1,0 +1,6 @@
+usr/local/bin/blas-qt usr/bin
+share/pixmaps/blas32.xpm usr/share/pixmaps
+share/pixmaps/blas16.xpm usr/share/pixmaps
+share/pixmaps/blas128.png usr/share/pixmaps
+debian/blas-qt.desktop usr/share/applications
+debian/blas-qt.protocol usr/share/kde4/services/

@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  blasd The Blas Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: blasd
+# processname: blasd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/blasd, see below
+if [ -f /etc/sysconfig/blasd ]; then
+        . /etc/sysconfig/blasd
+fi
+
+RETVAL=0
+
+prog=blasd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/blasd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/blasd}
+
+# blasd defaults to /usr/bin/blasd, override with BITCOIND_BIN
+blasd=${BITCOIND_BIN-/usr/bin/blasd}
+
+# blasd opts default to -disablewallet, override with BITCOIND_OPTS
+blasd_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $blasd $blasd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

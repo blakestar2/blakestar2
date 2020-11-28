@@ -1,0 +1,3 @@
+debian/manpages/blasd.1
+debian/manpages/blas.conf.5
+debian/manpages/blas-cli.1

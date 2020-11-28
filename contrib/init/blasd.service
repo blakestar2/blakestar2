@@ -1,0 +1,22 @@
+[Unit]
+Description=Blas's distributed currency daemon
+After=network.target
+
+[Service]
+User=blakestar
+Group=blakestar
+
+Type=forking
+PIDFile=/var/lib/blasd/blasd.pid
+ExecStart=/usr/bin/blasd -daemon -pid=/var/lib/blasd/blasd.pid \
+-conf=/etc/blakestar2/blakestar2.conf -datadir=/var/lib/blasd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
