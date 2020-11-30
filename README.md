@@ -4,11 +4,8 @@ Blake Star 2.0 (v2.0.1.2) (algorithm: x22)
 ## Development Resources
 
 ###### Resources:
-- Official site: https://blakestar.com  
-- Block explorer: https://explorer.blakestar.com
-- Sentinel: https://github.com/blakestar2/blakestar2-sentinel  
-- Masternode installer: https://github.com/blakestar2/blakestar2-masternode  
-- Masternode guide: https://github.com/blakestar2/blakestar2-masternode-guide  
+- Official site: https://blakestar.store  
+- Block explorer: https://openchains.info/coin/blakestar2/blocks
 - How to setup a Masternode: https://github.com/blakestar2/blakestar2/blob/master/MASTERNODE.md
 
 License
