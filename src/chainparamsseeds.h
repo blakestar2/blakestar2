@@ -9,34 +9,10 @@
  */
  // ***TODO*** fix generate-seeds.py and REGENERATE
 static SeedSpec6 pnSeed6_main[] = { 
-	{{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0x9f,0x41,0x72,0x1f}, 9779},
+	{{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0x9f,0x41,0x72,0x1f}, 9779}
+	{{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0x02,0x3a,0x62,0x3e}, 9779},
 };
 
 static SeedSpec6 pnSeed6_test[] = { };
-
-#include "arith_uint256.h"
-void MineGenesisBlock(CBlock &genesis);
-
-void MineGenesisBlock(CBlock &genesis)
-{
-    arith_uint256 best = arith_uint256();
-    int n=0;
-    arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
-    while (UintToArith256(genesis.GetHash()) > hashTarget) {
-        arith_uint256 c=UintToArith256(genesis.GetHash());
-
-        if(c < best || n==0)
-        {
-            best = c;
-            n=1;
-            std::cout << genesis.GetHash().GetHex().c_str() << " -- "  << hashTarget.GetHex().c_str() << " -- " << best.GetHex().c_str() << std::endl;
-        }
-        ++genesis.nNonce;
-        if (genesis.nNonce == 0) 
-            ++genesis.nTime;
-    }
-    //printf("HASH IS: %s\n", UintToArith256(genesis.GetHash()).ToString().c_str());
-    std::cout << "Converting genesis hash to string: " << genesis.ToString().c_str() << std::endl; 
-}
 
 #endif // BITCOIN_CHAINPARAMSSEEDS_H
