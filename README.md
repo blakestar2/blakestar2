@@ -4,11 +4,10 @@ Blake Star 2.0 (v2.0.1.2) (algorithm: x22)
 ## Development Resources
 
 ###### Resources:
-- Official site: https://blakestar.store  
+- Official site: https://blakestar.store
 - Block explorer: https://openchains.info/coin/blakestar2/blocks
 - Announcement: https://bitcointalk.org/index.php?topic=5279340.0
 - Discord: https://discord.gg/ftdWtQx
-
 - How to setup a Masternode: https://github.com/blakestar2/blakestar2/blob/master/MASTERNODE.md
 
 License
