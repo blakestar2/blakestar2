@@ -91,7 +91,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00");
+        consensus.BIP34Hash = uint256S("0x00000a96e3c1a0540de9e1117fe2e4344d72d13889b9aea84dbbf63e396a809b");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 4 * 60;
         consensus.nPowTargetSpacing = 2.5 * 60;
@@ -118,10 +118,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226;
 
        // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000318a620c2e");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00");
+        consensus.defaultAssumeValid = uint256S("0x0000000a5d423e325e945eb9ee1e2f1aeff4b08f6c7503d2650c2a2ca99df0d8");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -141,12 +141,11 @@ public:
         genesis = CreateGenesisBlock(1548838196, 3431563, 0x1e0fffff, 1, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-	//MineGenesisBlock(genesis);
-
         assert(consensus.hashGenesisBlock == uint256S("0x00000a96e3c1a0540de9e1117fe2e4344d72d13889b9aea84dbbf63e396a809b"));
         assert(genesis.hashMerkleRoot == uint256S("0x5af0fbd889f0359a95e9044135839d49b672a9f1cc31d5613441d1f453c04de1"));
 
         vSeeds.push_back(CDNSSeedData("194.120.116.11", "194.120.116.11"));
+	vSeeds.push_back(CDNSSeedData("2.58.98.62", "2.58.98.62"));
         //vSeeds.clear();
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,26);
@@ -172,9 +171,10 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x00000a96e3c1a0540de9e1117fe2e4344d72d13889b9aea84dbbf63e396a809b")),
-            1548838196, // * UNIX timestamp of last checkpoint block
-            1,    // * total number of transactions between genesis and last checkpoint
+            ( 0, uint256S("0x00000a96e3c1a0540de9e1117fe2e4344d72d13889b9aea84dbbf63e396a809b"))
+            ( 1235, uint256S("0x0000000a5d423e325e945eb9ee1e2f1aeff4b08f6c7503d2650c2a2ca99df0d8")),
+            1606763220, // * UNIX timestamp of last checkpoint block
+            1252,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             5000        // * estimated number of transactions per day after checkpoint
         };
