@@ -1,4 +1,4 @@
-Blake Star 2.0 (v2.0.1.2) (algorithm: x22)
+Blake Star 2.0 (v2.0.1.3) (algorithm: x22)
 ===============================
 
 ## Development Resources
